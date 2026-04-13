@@ -1,0 +1,21 @@
+# ROS 2 workspaces
+/ros2_ws/build/
+/ros2_ws/install/
+/ros2_ws/log/
+build/
+install/
+log/
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+# IDE and editor specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+# Other generated files
+*.DS_Store
