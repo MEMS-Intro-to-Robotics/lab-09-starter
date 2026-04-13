@@ -14,22 +14,26 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
-    - name: Install dependencies
-      run: pip install pytest numpy
-    - name: Lab 9 Validation
-      id: lab-9-validation
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: Lab 9 Validation
-        command: pytest test_lab_9.py -v
-        timeout: 120
+      # This is where you place your autograding tests
+      # For more information on this runner, see the documentation at: https://github.com/classroom-resources/autograding-io-grader
+      #
+      # For example, you could run a test suite like this:
+      # - name: Run tests
+      #   uses: classroom-resources/autograding-io-grader@v1
+      #     with:
+      #       test-name: Addition Test
+      #       id: addition-test
+      #       command: "./bin/add.sh"
+      #       input: 1 2
+      #       expected-output: 3
+      #       comparison-method: exact
+      #       timeout: 10
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
-      env:
-        LAB-9-VALIDATION_RESULTS: "${{steps.lab-9-validation.outputs.result}}"
-      with:
-        runners: lab-9-validation
+      # For more information on this runner, see the documentation at https://github.com/classroom-resources/autograding-grading-reporter
+      # To output the results of the tests, you can use the
+      # autograding-grading-reporter action like this:
+      # env:
+      # ADDITION-TEST_RESULTS: "${{ steps.addition - test.outputs.result }}"
+      #     with:
+      #         runners: addition-test
